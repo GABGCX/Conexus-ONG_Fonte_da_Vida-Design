@@ -1,0 +1,53 @@
+/* ══════════════════════════════════════════════════
+   tokens.css  —  Design tokens & CSS variables
+   ONG Fonte da Vida · Conexus
+══════════════════════════════════════════════════ */
+
+/* ═══════════════════════ TOKENS ═══════════════════════ */
+:root {
+  --forest:       #1a3a2a;
+  --forest-mid:   #2d5a40;
+  --forest-light: #3d7a56;
+  --forest-pale:  #e8f2eb;
+  --leaf:         #5a9e6f;
+  --sage:         #8bbb9a;
+  --sage-pale:    #c8dece;
+  --earth:        #6b4c35;
+  --earth-mid:    #8b6347;
+  --earth-pale:   #f5ede6;
+  --amber:        #d4894a;
+  --amber-deep:   #b8652a;
+  --amber-pale:   #fdf0e6;
+  --sand:         #f7f2eb;
+  --sand-deep:    #ede8df;
+  --cream:        #faf8f4;
+  --white:        #ffffff;
+  --ink:          #1c2c24;
+  --ink-mid:      #3d5247;
+  --ink-muted:    #6b8477;
+  --ink-faint:    #9bb5a8;
+  --red:          #c0392b;
+  --red-pale:     #fdf1f0;
+  --border:       rgba(42,90,64,0.10);
+  --border-mid:   rgba(42,90,64,0.16);
+  --border-strong:rgba(42,90,64,0.22);
+  --shadow-xs:    0 1px 4px rgba(26,58,42,0.06);
+  --shadow-sm:    0 2px 14px rgba(26,58,42,0.08);
+  --shadow-md:    0 6px 28px rgba(26,58,42,0.11);
+  --shadow-lg:    0 16px 48px rgba(26,58,42,0.16);
+  --r-xs:4px; --r-sm:10px; --r-md:14px; --r-lg:20px; --r-xl:28px;
+  --font-display:'Lora',Georgia,serif;
+  --font-body:'DM Sans',system-ui,sans-serif;
+  --nav-h:52px;
+  --sb-w:240px;
+  --sb-w-sm:64px;
+  --bottom-h:60px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);background:var(--sand);color:var(--ink);line-height:1.6}
+input,select,textarea,button{font-family:var(--font-body)}
+a{text-decoration:none}
+button{cursor:pointer}
+
+

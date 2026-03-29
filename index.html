@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conexus - ONG Fonte da Vida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/screens.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- ═══════════════ PREVIEW NAV ═══════════════ -->
+<nav class="pnav">
+  <span class="logo">Conexus OSFL</span>
+  <div class="pnav-tabs">
+    <button class="ptab active"  onclick="go('login')">Login</button>
+    <button class="ptab"         onclick="go('cadastro')">Cadastro</button>
+    <button class="ptab"         onclick="go('dashboard')">Dashboard</button>
+    <button class="ptab"         onclick="go('chamada')">Chamada</button>
+    <button class="ptab"         onclick="go('pessoas')">Pessoas</button>
+    <button class="ptab"         onclick="go('pessoa-form')">Cad. Pessoa</button>
+    <button class="ptab"         onclick="go('pessoa-det')">Detalhe Pessoa</button>
+    <button class="ptab"         onclick="go('turmas')">Turmas</button>
+    <button class="ptab"         onclick="go('atendimentos')">Atendimentos</button>
+    <button class="ptab"         onclick="go('relatorios')">Relatorios</button>
+    <button class="ptab"         onclick="go('usuarios')">Usuarios</button>
+    <button class="ptab"         onclick="go('tokens')">Design System</button>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════
+     LOGIN
+════════════════════════════════════════ -->
+<div id="s-login" class="screen active">
+  <div class="login-sh">
+    <div class="ll">
+      <div class="ll-brand">ONG Fonte da Vida</div>
+      <div class="ll-body">
+        <h1>Cuidando de<br>quem precisa<br>com <em>proposito</em></h1>
+        <p>Plataforma de gestao da ONG Fonte da Vida. Registre frequencias, acompanhe turmas e gere relatorios em segundos.</p>
+        <div class="ll-stats">
+          <div class="ll-stat"><span class="n">316</span><span class="l">Atendimentos</span></div>
+          <div class="ll-stat"><span class="n">90</span><span class="l">Assistidos</span></div>
+          <div class="ll-stat"><span class="n">5</span><span class="l">Atividades</span></div>
+        </div>
+        <div class="ll-pills">
+          <span class="ll-pill ll-pg">Refor&ccedil;o Escolar</span>
+          <span class="ll-pill ll-pe">Fonte Ativa &mdash; Idosos</span>
+          <span class="ll-pill ll-pg">Futebol</span>
+          <span class="ll-pill ll-pe">Quentinhas</span>
+        </div>
+      </div>
+      <div class="ll-foot">ONG Fonte da Vida &middot; Fortaleza, CE &middot; LGPD em conformidade</div>
+    </div>
+    <div class="lr">
+      <div class="lr-hd"><h2>Boas-vindas</h2><p>Acesse sua conta para continuar</p></div>
+      <div class="lr-form">
+        <div class="field"><label>E-mail</label><input type="email" value="erik@fontedevida.org"></div>
+        <div class="field"><label>Senha</label><input type="password" value="password"></div>
+        <div style="display:flex;justify-content:flex-end;margin-top:-4px">
+          <a href="#" style="font-size:13px;color:var(--forest-light);font-weight:600">Esqueci minha senha</a>
+        </div>
+        <button class="btn btn-primary btn-full" style="padding:14px" onclick="go('dashboard')">Entrar na plataforma</button>
+      </div>
+      <div class="lr-foot">Nao tem conta? <a href="#" onclick="go('cadastro');return false">Solicitar acesso</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CADASTRO
+════════════════════════════════════════ -->
+<div id="s-cadastro" class="screen">
+  <div class="login-sh">
+    <div class="ll">
+      <div class="ll-brand">ONG Fonte da Vida</div>
+      <div class="ll-body">
+        <h1>Junte-se a quem<br>faz a <em>diferenca</em><br>acontecer</h1>
+        <p>Preencha seus dados para solicitar acesso. Um administrador ira validar seu cadastro em breve.</p>
+        <div class="ll-pills" style="margin-top:2rem">
+          <span class="ll-pill ll-pg">Admin</span>
+          <span class="ll-pill ll-pe">Educador</span>
+          <span class="ll-pill ll-pg">Visualizador</span>
+        </div>
+      </div>
+      <div class="ll-foot">ONG Fonte da Vida &middot; Fortaleza, CE</div>
+    </div>
+    <div class="lr">
+      <div class="lr-hd">
+        <h2>Criar conta</h2>
+        <p>Preencha os dados para solicitar acesso</p>
+      </div>
+      <div class="lr-form">
+        <div class="field">
+          <label>Nome completo</label>
+          <input type="text" placeholder="Seu nome completo">
+        </div>
+        <div class="field">
+          <label>E-mail</label>
+          <input type="email" placeholder="seu@email.com">
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label>Senha</label>
+            <input type="password" placeholder="Minimo 6 caracteres">
+          </div>
+          <div class="field">
+            <label>CPF</label>
+            <input type="text" placeholder="Somente numeros">
+          </div>
+        </div>
+        <button class="btn btn-primary btn-full" style="padding:14px">Solicitar acesso</button>
+      </div>
+      <div class="lr-foot">Ja tem conta? <a href="#" onclick="go('login');return false">Fazer login</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     DASHBOARD
+════════════════════════════════════════ -->
+<div id="s-dashboard" class="screen">
+<div class="app">
+  <!-- sidebar -->
+  <nav class="sb" id="sb-dash">
+    <div class="sb-brand"><div class="nm">Conexus</div><div class="sm">ONG Fonte da Vida</div></div>
+    <span class="sb-sec">Principal</span>
+    <div class="sb-item active"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Dashboard</span></div>
+    <div class="sb-item" onclick="go('chamada')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="13" cy="12" r="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M13 11v1l.5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span><span class="sb-txt">Chamada</span></div>
+    <div class="sb-item" onclick="go('pessoas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Pessoas</span></div>
+    <div class="sb-item" onclick="go('turmas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Turmas</span></div>
+    <div class="sb-item" onclick="go('atendimentos')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Atendimentos</span></div>
+    <span class="sb-sec">Gestao</span>
+    <div class="sb-item" onclick="go('relatorios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4l4 2 2-3 2 3 4-2v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="sb-txt">Relatorios</span></div>
+    <div class="sb-item" onclick="go('usuarios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.761 2.239-4.5 5-4.5s5 1.739 5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M14 14c0-1.657-1.119-3-2.5-3.5M12 8v3M10.5 9.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Usuarios</span></div>
+    <div class="sb-bot"><div class="sb-usr"><div class="av av-md av-forest">EM</div><div class="sb-usr-info"><div class="un">Erik Maia</div><div class="ur">Admin</div></div></div></div>
+  </nav>
+  <main class="main">
+    <div class="ph">
+      <div><h1>Ola, Erik</h1><p class="sub">Domingo, 29 de mar&ccedil;o de 2026 &mdash; 60 crian&ccedil;as e 30 idosos assistidos</p></div>
+      <div class="ph-acts">
+        <button class="btn btn-secondary btn-sm" onclick="go('relatorios')">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 9V1M3 6l3.5 4L10 6M1 12h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Exportar
+        </button>
+        <button class="btn btn-primary btn-sm" onclick="go('chamada')">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Iniciar Chamada
+        </button>
+      </div>
+    </div>
+    <div class="pb">
+      <!-- KPIs -->
+      <div class="kpi-g">
+        <div class="kpi"><div class="kpi-lbl">Atendimentos / m&ecirc;s</div><div class="kpi-val">316</div><div class="kpi-d up"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 9V2M2 5.5l3.5-4 3.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>2026 em andamento</div><div class="kpi-bar" style="background:var(--leaf);width:80%"></div></div>
+        <div class="kpi"><div class="kpi-lbl">Pessoas ativas</div><div class="kpi-val">90</div><div class="kpi-d up"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 9V2M2 5.5l3.5-4 3.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>60 crian&ccedil;as + 30 idosos</div><div class="kpi-bar" style="background:var(--amber);width:55%"></div></div>
+        <div class="kpi"><div class="kpi-lbl">Frequencia media</div><div class="kpi-val">91%</div><div class="kpi-d up"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 9V2M2 5.5l3.5-4 3.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Acima da meta</div><div class="kpi-bar" style="background:var(--sage);width:91%"></div></div>
+        <div class="kpi"><div class="kpi-lbl">Novos cadastros</div><div class="kpi-val">6</div><div class="kpi-d up"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M5.5 9V2M2 5.5l3.5-4 3.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Desistentes: 6</div><div class="kpi-bar" style="background:var(--earth-mid);width:18%"></div></div>
+      </div>
+      <!-- Charts -->
+      <div class="two-col">
+        <div class="card card-p">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem">
+            <span style="font-size:15px;font-weight:600;color:var(--ink)">Frequencia diaria</span>
+            <div style="display:flex;gap:11px">
+              <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink-muted)"><span style="width:10px;height:10px;border-radius:2px;background:var(--leaf);display:inline-block"></span>Presentes</span>
+              <span style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink-muted)"><span style="width:10px;height:10px;border-radius:2px;background:var(--amber);display:inline-block"></span>Ausentes</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-end;gap:6px;height:128px">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end"><div style="border-radius:4px 4px 0 0;height:55%;background:var(--leaf);min-height:3px"></div></div><span style="font-size:10px;color:var(--ink-faint);font-weight:500">Seg</span></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end"><div style="border-radius:4px 4px 0 0;height:80%;background:var(--leaf);min-height:3px"></div></div><span style="font-size:10px;color:var(--ink-faint);font-weight:500">Ter</span></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end"><div style="border-radius:4px 4px 0 0;height:65%;background:var(--amber);min-height:3px"></div></div><span style="font-size:10px;color:var(--ink-faint);font-weight:500">Qua</span></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end"><div style="border-radius:4px 4px 0 0;height:91%;background:var(--leaf);min-height:3px"></div></div><span style="font-size:10px;color:var(--ink-faint);font-weight:500">Qui</span></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end"><div style="border-radius:4px 4px 0 0;height:70%;background:var(--leaf);min-height:3px"></div></div><span style="font-size:10px;color:var(--ink-faint);font-weight:500">Sex</span></div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:5px"><div style="width:100%;display:flex;flex-direction:column;justify-content:flex-end"><div style="border-radius:4px 4px 0 0;height:38%;background:var(--amber);min-height:3px"></div></div><span style="font-size:10px;color:var(--ink-faint);font-weight:500">Sab</span></div>
+          </div>
+        </div>
+        <div class="card card-p">
+          <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:1.1rem">Por atividade</div>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;align-items:center;gap:9px"><span style="font-size:13px;color:var(--ink-mid);flex:0 0 110px">Refor&ccedil;o Escolar</span><div style="flex:1;height:7px;background:var(--forest-pale);border-radius:4px;overflow:hidden"><div style="height:100%;width:88%;background:var(--leaf);border-radius:4px"></div></div><span style="font-size:13px;font-weight:600;color:var(--ink);min-width:26px;text-align:right">60</span></div>
+            <div style="display:flex;align-items:center;gap:9px"><span style="font-size:13px;color:var(--ink-mid);flex:0 0 110px">Fonte Ativa 60+</span><div style="flex:1;height:7px;background:var(--forest-pale);border-radius:4px;overflow:hidden"><div style="height:100%;width:44%;background:var(--amber);border-radius:4px"></div></div><span style="font-size:13px;font-weight:600;color:var(--ink);min-width:26px;text-align:right">30</span></div>
+            <div style="display:flex;align-items:center;gap:9px"><span style="font-size:13px;color:var(--ink-mid);flex:0 0 110px">Futebol</span><div style="flex:1;height:7px;background:var(--forest-pale);border-radius:4px;overflow:hidden"><div style="height:100%;width:28%;background:var(--sage);border-radius:4px"></div></div><span style="font-size:13px;font-weight:600;color:var(--ink);min-width:26px;text-align:right">21</span></div>
+            <div style="display:flex;align-items:center;gap:9px"><span style="font-size:13px;color:var(--ink-mid);flex:0 0 110px">Quentinhas</span><div style="flex:1;height:7px;background:var(--forest-pale);border-radius:4px;overflow:hidden"><div style="height:100%;width:22%;background:var(--earth-mid);border-radius:4px"></div></div><span style="font-size:13px;font-weight:600;color:var(--ink);min-width:26px;text-align:right">18</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Alertas / cards de acao rapida -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+        <div class="card card-p" style="border-left:4px solid var(--amber);border-radius:0 var(--r-md) var(--r-md) 0;cursor:pointer" onclick="go('chamada')">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--amber-deep);margin-bottom:5px">Acao rapida</div>
+          <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:3px">Chamada do dia</div>
+          <div style="font-size:13px;color:var(--ink-muted)">Tia Sabrina &mdash; 1&ordm; e 2&ordm; Ano &middot; Manh&atilde;</div>
+        </div>
+        <div class="card card-p" style="border-left:4px solid var(--red);border-radius:0 var(--r-md) var(--r-md) 0">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--red);margin-bottom:5px">Atencao</div>
+          <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:3px">3 ausencias seguidas</div>
+          <div style="font-size:13px;color:var(--ink-muted)">Davila M., Maria Esther, Pietro S.</div>
+        </div>
+        <div class="card card-p" style="border-left:4px solid var(--leaf);border-radius:0 var(--r-md) var(--r-md) 0">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--forest-light);margin-bottom:5px">Novidade</div>
+          <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:3px">18 novos cadastros</div>
+          <div style="font-size:13px;color:var(--ink-muted)">6 desistentes registrados 2026</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <nav class="bnav">
+    <div class="bn active" onclick="go('dashboard')"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>Home</div>
+    <div class="bn" onclick="go('pessoas')"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3.866 3.134-6.5 7-6.5s7 2.634 7 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Pessoas</div>
+    <div class="bn-fab" onclick="go('chamada')"><div class="bn-fab-circle"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><span class="bn-fab-label">Chamada</span></div>
+    <div class="bn" onclick="go('atendimentos')"><svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h10M3 15h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Registros</div>
+    <div class="bn" onclick="go('relatorios')"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15V6l5 2.5L10 5l2 3.5L17 6v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Relat.</div>
+  </nav>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CHAMADA (rotina principal)
+════════════════════════════════════════ -->
+<div id="s-chamada" class="screen">
+<div class="app">
+  <nav class="sb">
+    <div class="sb-brand"><div class="nm">Conexus</div><div class="sm">ONG Fonte da Vida</div></div>
+    <span class="sb-sec">Principal</span>
+    <div class="sb-item" onclick="go('dashboard')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Dashboard</span></div>
+    <div class="sb-item active"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="13" cy="12" r="2.5" stroke="currentColor" stroke-width="1.3"/></svg></span><span class="sb-txt">Chamada</span></div>
+    <div class="sb-item" onclick="go('pessoas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Pessoas</span></div>
+    <div class="sb-item" onclick="go('turmas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Turmas</span></div>
+    <div class="sb-item" onclick="go('atendimentos')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Atendimentos</span></div>
+    <span class="sb-sec">Gestao</span>
+    <div class="sb-item" onclick="go('relatorios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4l4 2 2-3 2 3 4-2v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="sb-txt">Relatorios</span></div>
+    <div class="sb-item" onclick="go('usuarios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.761 2.239-4.5 5-4.5s5 1.739 5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 8v3M10.5 9.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Usuarios</span></div>
+    <div class="sb-bot"><div class="sb-usr"><div class="av av-md av-forest">MS</div><div class="sb-usr-info"><div class="un">Maria Silva</div><div class="ur">Educador</div></div></div></div>
+  </nav>
+  <main class="main">
+    <!-- Header com seletores -->
+    <div class="chamada-header">
+      <div class="field">
+        <label>Turma</label>
+        <select>
+          <option>Tia Sabrina &mdash; 1&ordm; e 2&ordm; Ano (Manh&atilde;)</option>
+          <option>Tia Sabrina &mdash; 1&ordm; e 2&ordm; Ano (Tarde)</option>
+          <option>Tia Alana &mdash; 3&ordm; ao 6&ordm; Ano (Manh&atilde;)</option>
+          <option>Tia Alana &mdash; 3&ordm; ao 6&ordm; Ano (Tarde)</option>
+          <option>Tia Karole &mdash; Infantil V (Tarde)</option>
+          <option>Saulo Pinho &mdash; Fonte Ativa Idosos</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Data da chamada</label>
+        <input type="date" value="2026-03-25">
+      </div>
+      <div style="display:flex;align-items:flex-end">
+        <button class="btn btn-amber btn-full">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Marcar todos presentes
+        </button>
+      </div>
+    </div>
+    <!-- Resumo live -->
+    <div class="chamada-summary" id="chamada-sum">
+      <div class="cs-item"><span class="cs-num" id="c-total">12</span><span>alunos</span></div>
+      <div class="cs-item" style="color:var(--sage-pale)"><span class="dot dot-green" style="background:var(--leaf)"></span><span class="cs-num" id="c-pres" style="color:var(--sage-pale)">9</span><span>presentes</span></div>
+      <div class="cs-item" style="color:rgba(200,222,206,.7)"><span class="dot" style="background:rgba(192,57,43,.7)"></span><span class="cs-num" id="c-aus" style="color:rgba(200,222,206,.8)">2</span><span>ausentes</span></div>
+      <div class="cs-item" style="color:rgba(200,222,206,.5)"><span class="dot dot-amber" style="background:var(--amber)"></span><span class="cs-num" id="c-pend" style="color:rgba(200,222,206,.6)">1</span><span>pendentes</span></div>
+    </div>
+    <!-- Lista de alunos -->
+    <div class="chamada-list" id="chamada-list">
+      <!-- items generated by JS -->
+    </div>
+    <!-- Footer fixo -->
+    <div class="chamada-footer">
+      <span style="font-size:13px;color:var(--ink-muted)">Registro sera enviado via POST /atendimentos/bulk</span>
+      <div style="display:flex;gap:9px">
+        <button class="btn btn-secondary btn-sm" onclick="go('dashboard')">Cancelar</button>
+        <button class="btn btn-primary" onclick="go('atendimentos')">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l4 4 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Salvar chamada
+        </button>
+      </div>
+    </div>
+  </main>
+  <nav class="bnav">
+    <div class="bn" onclick="go('dashboard')"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>Home</div>
+    <div class="bn" onclick="go('pessoas')"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3.866 3.134-6.5 7-6.5s7 2.634 7 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Pessoas</div>
+    <div class="bn-fab active" onclick="go('chamada')"><div class="bn-fab-circle"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><span class="bn-fab-label">Chamada</span></div>
+    <div class="bn" onclick="go('atendimentos')"><svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h10M3 15h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Registros</div>
+    <div class="bn" onclick="go('relatorios')"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15V6l5 2.5L10 5l2 3.5L17 6v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Relat.</div>
+  </nav>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     PESSOAS (lista)
+════════════════════════════════════════ -->
+<div id="s-pessoas" class="screen">
+<div class="app">
+  <nav class="sb">
+    <div class="sb-brand"><div class="nm">Conexus</div><div class="sm">ONG Fonte da Vida</div></div>
+    <span class="sb-sec">Principal</span>
+    <div class="sb-item" onclick="go('dashboard')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Dashboard</span></div>
+    <div class="sb-item" onclick="go('chamada')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Chamada</span></div>
+    <div class="sb-item active"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Pessoas</span></div>
+    <div class="sb-item" onclick="go('turmas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Turmas</span></div>
+    <div class="sb-item" onclick="go('atendimentos')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Atendimentos</span></div>
+    <span class="sb-sec">Gestao</span>
+    <div class="sb-item" onclick="go('relatorios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4l4 2 2-3 2 3 4-2v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="sb-txt">Relatorios</span></div>
+    <div class="sb-item" onclick="go('usuarios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.761 2.239-4.5 5-4.5s5 1.739 5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 8v3M10.5 9.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Usuarios</span></div>
+    <div class="sb-bot"><div class="sb-usr"><div class="av av-md av-forest">EM</div><div class="sb-usr-info"><div class="un">Erik Maia</div><div class="ur">Admin</div></div></div></div>
+  </nav>
+  <main class="main">
+    <div class="ph">
+      <div><h1>Pessoas</h1><p class="sub">90 pessoas ativas &mdash; 60 crian&ccedil;as, 30 idosos e educadores</p></div>
+      <div class="ph-acts">
+        <button class="btn btn-secondary btn-sm">Importar CSV</button>
+        <button class="btn btn-primary btn-sm" onclick="go('pessoa-form')">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Nova pessoa
+        </button>
+      </div>
+    </div>
+    <div class="pb">
+      <div class="t-shell">
+        <div class="t-bar">
+          <div class="sw"><span class="sw-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="5.5" cy="5.5" r="4" stroke="var(--ink-faint)" stroke-width="1.3"/><path d="M9 9L12 12" stroke="var(--ink-faint)" stroke-width="1.3" stroke-linecap="round"/></svg></span><input type="text" placeholder="Buscar por nome ou CPF..."></div>
+          <select class="fsel">
+            <option>Todos os tipos</option>
+            <option>Beneficiario</option>
+            <option>Voluntario</option>
+            <option>Educador</option>
+          </select>
+          <select class="fsel">
+            <option>Todas as atividades</option>
+            <option>Reforco Escolar</option>
+            <option>Programa 60+</option>
+            <option>Futebol</option>
+            <option>Quentinhas</option>
+          </select>
+          <select class="fsel">
+            <option>Ativos</option>
+            <option>Inativos</option>
+            <option>Todos</option>
+          </select>
+        </div>
+        <div class="t-wrap">
+          <table class="dtbl">
+            <thead><tr>
+              <th>Nome</th><th>Tipo</th><th>CPF</th><th>Nascimento</th><th>Turma</th><th>Responsavel</th><th></th>
+            </tr></thead>
+            <tbody>
+              <tr style="cursor:pointer" onclick="go('pessoa-det')">
+                <td><div style="display:flex;align-items:center;gap:9px"><div class="av av-sm av-leaf">AG</div><span class="td-nm">Agnes Matos da Silva</span></div></td>
+                <td><span class="badge badge-green">Benefici&aacute;rio</span></td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">Tia Sabrina &mdash; Manh&atilde;</td>
+                <td class="td-mu td-el">Rebeca Matos</td>
+                <td><button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();go('pessoa-det')">Ver</button></td>
+              </tr>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:9px"><div class="av av-sm av-amber">AO</div><span class="td-nm">Antonia de Oliveira Silva</span></div></td>
+                <td><span class="badge badge-amber">Benefici&aacute;rio</span></td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">Fonte Ativa &mdash; Idosos</td>
+                <td class="td-mu">---</td>
+                <td><button class="btn btn-ghost btn-sm" onclick="go('pessoa-det')">Ver</button></td>
+              </tr>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:9px"><div class="av av-sm av-forest">SA</div><span class="td-nm">Sabrina (Educadora)</span></div></td>
+                <td><span class="badge badge-sage">Educador</span></td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">1&ordm; e 2&ordm; Manh&atilde; + Tarde</td>
+                <td class="td-mu">---</td>
+                <td><button class="btn btn-ghost btn-sm" onclick="go('pessoa-det')">Ver</button></td>
+              </tr>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:9px"><div class="av av-sm av-leaf">AK</div><span class="td-nm">Aylla Kyara Agostinho</span></div></td>
+                <td><span class="badge badge-green">Benefici&aacute;rio</span></td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">Tia Sabrina &mdash; Manh&atilde;</td>
+                <td class="td-mu td-el">Sabrina (m&atilde;e)</td>
+                <td><button class="btn btn-ghost btn-sm" onclick="go('pessoa-det')">Ver</button></td>
+              </tr>
+              <tr>
+                <td><div style="display:flex;align-items:center;gap:9px"><div class="av av-sm av-earth">AL</div><span class="td-nm">Ana Laura da Silva Martins</span></div></td>
+                <td><span class="badge badge-green">Benefici&aacute;rio</span></td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">---</td>
+                <td class="td-mu">Tia Karole &mdash; Infantil V</td>
+                <td class="td-mu td-el">Franciane Michele</td>
+                <td><button class="btn btn-ghost btn-sm" onclick="go('pessoa-det')">Ver</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="t-foot">
+          <span>Mostrando 5 de 90 pessoas</span>
+          <div style="display:flex;gap:6px">
+            <button class="btn btn-secondary btn-sm">Anterior</button>
+            <button class="btn btn-secondary btn-sm">Proximo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <nav class="bnav">
+    <div class="bn" onclick="go('dashboard')"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>Home</div>
+    <div class="bn active"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3.866 3.134-6.5 7-6.5s7 2.634 7 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Pessoas</div>
+    <div class="bn-fab" onclick="go('chamada')"><div class="bn-fab-circle"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><span class="bn-fab-label">Chamada</span></div>
+    <div class="bn" onclick="go('atendimentos')"><svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h10M3 15h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Registros</div>
+    <div class="bn" onclick="go('relatorios')"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15V6l5 2.5L10 5l2 3.5L17 6v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Relat.</div>
+  </nav>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CADASTRO DE PESSOA
+════════════════════════════════════════ -->
+<div id="s-pessoa-form" class="screen">
+<div class="app">
+  <nav class="sb">
+    <div class="sb-brand"><div class="nm">Conexus</div><div class="sm">ONG Fonte da Vida</div></div>
+    <span class="sb-sec">Principal</span>
+    <div class="sb-item" onclick="go('dashboard')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Dashboard</span></div>
+    <div class="sb-item" onclick="go('chamada')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="13" cy="12" r="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M13 11v1l.5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span><span class="sb-txt">Chamada</span></div>
+    <div class="sb-item active"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Pessoas</span></div>
+    <div class="sb-item" onclick="go('turmas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Turmas</span></div>
+    <div class="sb-item" onclick="go('atendimentos')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Atendimentos</span></div>
+    <span class="sb-sec">Gestao</span>
+    <div class="sb-item" onclick="go('relatorios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4l4 2 2-3 2 3 4-2v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="sb-txt">Relatorios</span></div>
+    <div class="sb-item" onclick="go('usuarios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.761 2.239-4.5 5-4.5s5 1.739 5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 8v3M10.5 9.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Usuarios</span></div>
+    <div class="sb-bot"><div class="sb-usr"><div class="av av-md av-forest">EM</div><div class="sb-usr-info"><div class="un">Erik Maia</div><div class="ur">Admin</div></div></div></div>
+  </nav>
+  <main class="main">
+    <div class="ph">
+      <div style="display:flex;align-items:center;gap:11px">
+        <button class="btn btn-secondary btn-sm btn-icon" onclick="go('pessoas')">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div><h1>Nova Pessoa</h1><p class="sub">POST /pessoas &mdash; campos validados conforme schema do banco</p></div>
+      </div>
+    </div>
+    <div class="pb">
+      <div class="card card-p" style="max-width:760px">
+        <!-- DADOS PESSOAIS -->
+        <div class="form-section">
+          <div class="form-section-title">Dados pessoais</div>
+          <div style="display:flex;flex-direction:column;gap:1rem">
+            <div class="field"><label>Nome completo <span style="color:var(--red)">*</span></label><input type="text" placeholder="Nome conforme documento"></div>
+            <div class="form-row">
+              <div class="field"><label>Data de nascimento <span style="color:var(--red)">*</span></label><input type="date"></div>
+              <div class="field"><label>CPF <span style="color:var(--ink-faint);font-weight:400;text-transform:none">(opcional para menores)</span></label><input type="text" placeholder="000.000.000-00"></div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Tipo <span style="color:var(--red)">*</span></label>
+                <select id="tipo-select" onchange="toggleResponsavel()">
+                  <option value="">Selecione...</option>
+                  <option value="beneficiario">Beneficiario</option>
+                  <option value="voluntario">Voluntario</option>
+                  <option value="educador">Educador</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Sexo</label>
+                <select>
+                  <option value="">Nao informado</option>
+                  <option value="M">Masculino</option>
+                  <option value="F">Feminino</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label>Telefone</label><input type="text" placeholder="(85) 99999-0000"></div>
+          </div>
+        </div>
+
+        <!-- RESPONSAVEL (exibido quando menor) -->
+        <div class="form-section" id="responsavel-section" style="display:none">
+          <div class="form-note">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="6.5" stroke="var(--amber-deep)" stroke-width="1.3"/><path d="M8 5v4M8 11v.5" stroke="var(--amber-deep)" stroke-width="1.4" stroke-linecap="round"/></svg>
+            <span>Para menores de 18 anos, preencha os dados do responsavel legal.</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:1rem;margin-top:1rem">
+            <div class="form-section-title">Responsavel legal</div>
+            <div class="field"><label>Nome do responsavel</label><input type="text" placeholder="Nome completo do responsavel"></div>
+            <div class="field"><label>Telefone do responsavel</label><input type="text" placeholder="(85) 99999-0000"></div>
+          </div>
+        </div>
+
+        <!-- VINCULO A TURMA -->
+        <div class="form-section">
+          <div class="form-section-title">Vinculo inicial</div>
+          <div class="field">
+            <label>Matricular em turma (opcional)</label>
+            <select>
+              <option value="">Selecionar turma...</option>
+              <option>Turma A &mdash; Reforco Escolar</option>
+              <option>Turma B &mdash; Reforco Escolar</option>
+              <option>Programa 60+ Manha</option>
+              <option>Sub-12 &mdash; Futebol</option>
+              <option>Quentinhas &mdash; Distribuicao</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- OBSERVACOES -->
+        <div class="form-section" style="margin-bottom:0">
+          <div class="form-section-title">Observacoes</div>
+          <div class="field"><textarea placeholder="Notas adicionais da equipe (opcional)..."></textarea></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:9px;max-width:760px">
+        <button class="btn btn-secondary" onclick="go('pessoas')">Cancelar</button>
+        <button class="btn btn-primary" onclick="go('pessoa-det')">Salvar cadastro</button>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     DETALHE DE PESSOA
+════════════════════════════════════════ -->
+<div id="s-pessoa-det" class="screen">
+<div class="app">
+  <nav class="sb">
+    <div class="sb-brand"><div class="nm">Conexus</div><div class="sm">ONG Fonte da Vida</div></div>
+    <span class="sb-sec">Principal</span>
+    <div class="sb-item" onclick="go('dashboard')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Dashboard</span></div>
+    <div class="sb-item" onclick="go('chamada')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="13" cy="12" r="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M13 11v1l.5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span><span class="sb-txt">Chamada</span></div>
+    <div class="sb-item active"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Pessoas</span></div>
+    <div class="sb-item" onclick="go('turmas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Turmas</span></div>
+    <div class="sb-item" onclick="go('atendimentos')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Atendimentos</span></div>
+    <span class="sb-sec">Gestao</span>
+    <div class="sb-item" onclick="go('relatorios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4l4 2 2-3 2 3 4-2v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="sb-txt">Relatorios</span></div>
+    <div class="sb-item" onclick="go('usuarios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.761 2.239-4.5 5-4.5s5 1.739 5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 8v3M10.5 9.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Usuarios</span></div>
+    <div class="sb-bot"><div class="sb-usr"><div class="av av-md av-forest">EM</div><div class="sb-usr-info"><div class="un">Erik Maia</div><div class="ur">Admin</div></div></div></div>
+  </nav>
+  <main class="main">
+    <div class="ph">
+      <div style="display:flex;align-items:center;gap:11px">
+        <button class="btn btn-secondary btn-sm btn-icon" onclick="go('pessoas')"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div><h1>Agnes Matos da Silva</h1><p class="sub">GET /pessoas/:id &mdash; Beneficiario &middot; Turma A Reforco Escolar</p></div>
+      </div>
+      <div class="ph-acts">
+        <button class="btn btn-secondary btn-sm" onclick="go('pessoa-form')">Editar</button>
+        <button class="btn btn-danger btn-sm">Inativar</button>
+      </div>
+    </div>
+    <div class="pb">
+      <div style="display:grid;grid-template-columns:1fr 300px;gap:1.2rem">
+        <!-- MAIN INFO -->
+        <div style="display:flex;flex-direction:column;gap:1.2rem">
+          <div class="card card-p">
+            <div style="display:flex;align-items:flex-start;gap:14px;margin-bottom:1.4rem">
+              <div class="av av-lg av-leaf" style="border-radius:var(--r-sm)">PA</div>
+              <div>
+                <div style="font-family:var(--font-display);font-size:20px;color:var(--ink);font-weight:500">Pedro Alves</div>
+                <div style="font-size:13px;color:var(--ink-muted);margin-top:2px">9 anos &middot; CPF nao informado</div>
+                <div style="display:flex;gap:7px;margin-top:8px;flex-wrap:wrap">
+                  <span class="badge badge-green">Beneficiario</span>
+                  <span class="badge badge-green">Ativo</span>
+                </div>
+              </div>
+            </div>
+            <div class="divider" style="margin:0 0 1.4rem"></div>
+            <div class="dl-grid">
+              <div class="dl-item"><div class="dk">Data de nascimento</div><div class="dv">12 de maio de 2016</div></div>
+              <div class="dl-item"><div class="dk">Telefone</div><div class="dv">(85) 98765-4321</div></div>
+              <div class="dl-item"><div class="dk">Responsavel</div><div class="dv">Carlos Alves</div></div>
+              <div class="dl-item"><div class="dk">Tel. Responsavel</div><div class="dv">(85) 99111-2233</div></div>
+              <div class="dl-item"><div class="dk">Sexo</div><div class="dv">Masculino</div></div>
+              <div class="dl-item"><div class="dk">Cadastrado em</div><div class="dv">03/01/2026</div></div>
+              <div class="dl-item" style="grid-column:1/-1"><div class="dk">Observacoes</div><div class="dv" style="color:var(--ink-mid);line-height:1.65;margin-top:4px">Crianca engajada. Demonstra dificuldade em leitura, mas evolucao consistente nas ultimas semanas. Familia em situacao de vulnerabilidade social.</div></div>
+            </div>
+          </div>
+          <!-- Turmas -->
+          <div class="card card-p">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.1rem">
+              <div style="font-size:15px;font-weight:600;color:var(--ink)">Turmas matriculadas</div>
+              <button class="btn btn-ghost btn-sm">Adicionar turma</button>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.75rem">
+              <div style="display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;background:var(--forest-pale);border-radius:var(--r-sm)">
+                <div><div style="font-size:14px;font-weight:500;color:var(--ink)">Turma A &mdash; Reforco Escolar</div><div style="font-size:12px;color:var(--ink-muted)">Matriculado em 03/01/2026 &middot; Professora Maria Silva</div></div>
+                <span class="badge badge-green">Ativo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SIDEBAR -->
+        <div style="display:flex;flex-direction:column;gap:1.2rem">
+          <div class="card card-p">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);margin-bottom:14px">Frequencia no mes</div>
+            <div style="text-align:center;margin-bottom:14px">
+              <div style="font-family:var(--font-display);font-size:42px;font-weight:600;color:var(--ink);line-height:1">75%</div>
+              <div style="font-size:13px;color:var(--ink-muted);margin-top:4px">3 de 4 chamadas</div>
+            </div>
+            <div style="height:9px;background:var(--forest-pale);border-radius:5px;overflow:hidden;margin-bottom:1rem"><div style="height:100%;width:75%;background:var(--leaf);border-radius:5px"></div></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem">
+              <div style="text-align:center;padding:.75rem;background:var(--forest-pale);border-radius:var(--r-sm)"><div style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--ink)">3</div><div style="font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--leaf);font-weight:700">Presencas</div></div>
+              <div style="text-align:center;padding:.75rem;background:var(--red-pale);border-radius:var(--r-sm)"><div style="font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--ink)">1</div><div style="font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--red);font-weight:700">Ausencias</div></div>
+            </div>
+          </div>
+          <div class="card card-p">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);margin-bottom:14px">Historico recente</div>
+            <div class="tl">
+              <div class="tl-item"><div class="tl-dot" style="background:var(--forest-pale)"><span class="dot dot-green"></span></div><div class="tl-body"><div class="tt">Presente &mdash; Turma A</div><div class="td">25/03/2026 &middot; 14:30</div></div></div>
+              <div class="tl-item"><div class="tl-dot" style="background:var(--forest-pale)"><span class="dot dot-green"></span></div><div class="tl-body"><div class="tt">Presente &mdash; Turma A</div><div class="td">18/03/2026 &middot; 14:00</div></div></div>
+              <div class="tl-item"><div class="tl-dot" style="background:var(--red-pale)"><span class="dot dot-red"></span></div><div class="tl-body"><div class="tt">Ausente &mdash; Turma A</div><div class="td">11/03/2026 &middot; Justificado</div></div></div>
+              <div class="tl-item"><div class="tl-dot" style="background:var(--forest-pale)"><span class="dot dot-green"></span></div><div class="tl-body"><div class="tt">Presente &mdash; Turma A</div><div class="td">04/03/2026 &middot; 14:00</div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     TURMAS
+════════════════════════════════════════ -->
+<div id="s-turmas" class="screen">
+<div class="app">
+  <nav class="sb">
+    <div class="sb-brand"><div class="nm">Conexus</div><div class="sm">ONG Fonte da Vida</div></div>
+    <span class="sb-sec">Principal</span>
+    <div class="sb-item" onclick="go('dashboard')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Dashboard</span></div>
+    <div class="sb-item" onclick="go('chamada')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Chamada</span></div>
+    <div class="sb-item" onclick="go('pessoas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Pessoas</span></div>
+    <div class="sb-item active"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Turmas</span></div>
+    <div class="sb-item" onclick="go('atendimentos')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Atendimentos</span></div>
+    <span class="sb-sec">Gestao</span>
+    <div class="sb-item" onclick="go('relatorios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4l4 2 2-3 2 3 4-2v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="sb-txt">Relatorios</span></div>
+    <div class="sb-item" onclick="go('usuarios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.761 2.239-4.5 5-4.5s5 1.739 5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 8v3M10.5 9.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Usuarios</span></div>
+    <div class="sb-bot"><div class="sb-usr"><div class="av av-md av-forest">EM</div><div class="sb-usr-info"><div class="un">Erik Maia</div><div class="ur">Admin</div></div></div></div>
+  </nav>
+  <main class="main">
+    <div class="ph">
+      <div><h1>Turmas</h1><p class="sub">6 turmas ativas &mdash; 4 educadores, 90 assistidos</p></div>
+      <button class="btn btn-primary btn-sm" onclick="document.getElementById('m-turma').classList.add('open')">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Nova turma
+      </button>
+    </div>
+    <div class="pb">
+      <div class="turmas-grid">
+        <div class="turma-card">
+          <div class="turma-header" style="background:var(--leaf)"></div>
+          <div class="turma-body">
+            <div class="turma-act">Refor&ccedil;o Escolar &middot; Manh&atilde;</div>
+            <div class="turma-name">Tia Sabrina &mdash; 1&ordm; e 2&ordm; Ano</div>
+            <div class="turma-edu"><div class="av av-sm av-earth">SA</div><span>Sabrina</span></div>
+            <div class="turma-stats">
+              <div class="ts-item"><div class="tv">12</div><div class="tk">Alunos</div></div>
+              <div class="ts-item"><div class="tv">91%</div><div class="tk">Frequ&ecirc;ncia</div></div>
+              <div class="ts-item"><div class="tv">Manh&atilde;</div><div class="tk">Turno</div></div>
+            </div>
+          </div>
+          <div class="turma-footer">
+            <span class="badge badge-green">Ativa</span>
+            <button class="btn btn-ghost btn-sm" onclick="go('chamada')">Iniciar chamada</button>
+          </div>
+        </div>
+        <div class="turma-card">
+          <div class="turma-header" style="background:var(--leaf)"></div>
+          <div class="turma-body">
+            <div class="turma-act">Refor&ccedil;o Escolar &middot; Tarde</div>
+            <div class="turma-name">Tia Sabrina &mdash; 1&ordm; e 2&ordm; Ano</div>
+            <div class="turma-edu"><div class="av av-sm av-earth">SA</div><span>Sabrina</span></div>
+            <div class="turma-stats">
+              <div class="ts-item"><div class="tv">16</div><div class="tk">Alunos</div></div>
+              <div class="ts-item"><div class="tv">88%</div><div class="tk">Frequ&ecirc;ncia</div></div>
+              <div class="ts-item"><div class="tv">Tarde</div><div class="tk">Turno</div></div>
+            </div>
+          </div>
+          <div class="turma-footer">
+            <span class="badge badge-green">Ativa</span>
+            <button class="btn btn-ghost btn-sm" onclick="go('chamada')">Iniciar chamada</button>
+          </div>
+        </div>
+        <div class="turma-card">
+          <div class="turma-header" style="background:var(--amber)"></div>
+          <div class="turma-body">
+            <div class="turma-act">Fonte Ativa &middot; Idosos</div>
+            <div class="turma-name">Grupo Manh&atilde; &mdash; Idosos</div>
+            <div class="turma-edu"><div class="av av-sm av-amber">SP</div><span>Saulo Pinho</span></div>
+            <div class="turma-stats">
+              <div class="ts-item"><div class="tv">30</div><div class="tk">Membros</div></div>
+              <div class="ts-item"><div class="tv">94%</div><div class="tk">Frequ&ecirc;ncia</div></div>
+              <div class="ts-item"><div class="tv">Manh&atilde;</div><div class="tk">Turno</div></div>
+            </div>
+          </div>
+          <div class="turma-footer">
+            <span class="badge badge-green">Ativa</span>
+            <button class="btn btn-ghost btn-sm" onclick="go('chamada')">Iniciar chamada</button>
+          </div>
+        </div>
+        <div class="turma-card">
+          <div class="turma-header" style="background:var(--sage)"></div>
+          <div class="turma-body">
+            <div class="turma-act">Fonte Atleta &middot; Futebol</div>
+            <div class="turma-name">Tia Alana &mdash; 3&ordm; ao 6&ordm; Ano</div>
+            <div class="turma-edu"><div class="av av-sm av-leaf">AL</div><span>Alana</span></div>
+            <div class="turma-stats">
+              <div class="ts-item"><div class="tv">13</div><div class="tk">Alunos</div></div>
+              <div class="ts-item"><div class="tv">86%</div><div class="tk">Frequ&ecirc;ncia</div></div>
+              <div class="ts-item"><div class="tv">Manh&atilde;</div><div class="tk">Turno</div></div>
+            </div>
+          </div>
+          <div class="turma-footer">
+            <span class="badge badge-green">Ativa</span>
+            <button class="btn btn-ghost btn-sm" onclick="go('chamada')">Iniciar chamada</button>
+          </div>
+        </div>
+        <div class="turma-card">
+          <div class="turma-header" style="background:var(--earth-mid)"></div>
+          <div class="turma-body">
+            <div class="turma-act">Refor&ccedil;o Escolar &middot; Tarde</div>
+            <div class="turma-name">Tia Alana &mdash; 3&ordm; ao 6&ordm; Ano</div>
+            <div class="turma-edu"><div class="av av-sm av-earth">AL</div><span>Alana</span></div>
+            <div class="turma-stats">
+              <div class="ts-item"><div class="tv">19</div><div class="tk">Alunos</div></div>
+              <div class="ts-item"><div class="tv">85%</div><div class="tk">Frequ&ecirc;ncia</div></div>
+              <div class="ts-item"><div class="tv">Tarde</div><div class="tk">Turno</div></div>
+            </div>
+          </div>
+          <div class="turma-footer">
+            <span class="badge badge-green">Ativa</span>
+            <button class="btn btn-ghost btn-sm" onclick="go('chamada')">Iniciar chamada</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     ATENDIMENTOS
+════════════════════════════════════════ -->
+<div id="s-atendimentos" class="screen">
+<div class="app">
+  <nav class="sb">
+    <div class="sb-brand"><div class="nm">Conexus</div><div class="sm">ONG Fonte da Vida</div></div>
+    <span class="sb-sec">Principal</span>
+    <div class="sb-item" onclick="go('dashboard')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Dashboard</span></div>
+    <div class="sb-item" onclick="go('chamada')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Chamada</span></div>
+    <div class="sb-item" onclick="go('pessoas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Pessoas</span></div>
+    <div class="sb-item" onclick="go('turmas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Turmas</span></div>
+    <div class="sb-item active"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Atendimentos</span></div>
+    <span class="sb-sec">Gestao</span>
+    <div class="sb-item" onclick="go('relatorios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4l4 2 2-3 2 3 4-2v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="sb-txt">Relatorios</span></div>
+    <div class="sb-item" onclick="go('usuarios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.761 2.239-4.5 5-4.5s5 1.739 5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 8v3M10.5 9.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Usuarios</span></div>
+    <div class="sb-bot"><div class="sb-usr"><div class="av av-md av-forest">EM</div><div class="sb-usr-info"><div class="un">Erik Maia</div><div class="ur">Admin</div></div></div></div>
+  </nav>
+  <main class="main">
+    <div class="ph">
+      <div><h1>Atendimentos</h1><p class="sub">316 registros em 2026</p></div>
+      <button class="btn btn-primary btn-sm" onclick="go('chamada')">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Iniciar chamada
+      </button>
+    </div>
+    <div class="pb">
+      <div class="t-shell">
+        <div class="t-bar">
+          <div class="sw"><span class="sw-icon"><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><circle cx="5.5" cy="5.5" r="4" stroke="var(--ink-faint)" stroke-width="1.3"/><path d="M9 9L12 12" stroke="var(--ink-faint)" stroke-width="1.3" stroke-linecap="round"/></svg></span><input type="text" placeholder="Buscar por pessoa, turma..."></div>
+          <select class="fsel"><option>Todas as atividades</option><option>Reforco Escolar</option><option>Programa 60+</option><option>Futebol</option><option>Quentinhas</option></select>
+          <select class="fsel"><option>Este mes</option><option>Esta semana</option><option>Hoje</option></select>
+          <select class="fsel"><option>Todos</option><option>Somente presentes</option><option>Somente ausentes</option></select>
+        </div>
+        <div class="t-wrap">
+          <table class="dtbl">
+            <thead><tr><th>Pessoa</th><th>Atividade</th><th>Turma</th><th>Data</th><th>Presenca</th><th>Observacao</th><th>Registrado por</th></tr></thead>
+            <tbody>
+              <tr><td class="td-nm">Agnes Matos da Silva</td><td><span class="badge badge-green">Refor&ccedil;o Escolar</span></td><td class="td-mu">Sabrina &mdash; Manh&atilde;</td><td class="td-mu">25/03/2026</td><td><span class="presence yes"><span class="dot dot-green"></span>Sim</span></td><td class="td-mu td-el">Participativa</td><td class="td-mu">Sabrina</td></tr>
+              <tr><td class="td-nm">Antonia de Oliveira Silva</td><td><span class="badge badge-amber">Fonte Ativa</span></td><td class="td-mu">Grupo Idosos</td><td class="td-mu">25/03/2026</td><td><span class="presence yes"><span class="dot dot-green"></span>Sim</span></td><td class="td-mu td-el">Atividade f&iacute;sica</td><td class="td-mu">Saulo Pinho</td></tr>
+              <tr><td class="td-nm">Bernardo Silva Rocha</td><td><span class="badge badge-green">Refor&ccedil;o Escolar</span></td><td class="td-mu">Sabrina &mdash; Manh&atilde;</td><td class="td-mu">25/03/2026</td><td><span class="presence no"><span class="dot dot-red"></span>N&atilde;o</span></td><td class="td-mu td-el">Justificado</td><td class="td-mu">Sabrina</td></tr>
+              <tr><td class="td-nm">Maria Aurinete Barros</td><td><span class="badge badge-amber">Fonte Ativa</span></td><td class="td-mu">Grupo Idosos</td><td class="td-mu">24/03/2026</td><td><span class="presence yes"><span class="dot dot-green"></span>Sim</span></td><td class="td-mu td-el">Atividade f&iacute;sica</td><td class="td-mu">Saulo Pinho</td></tr>
+              <tr><td class="td-nm">Leticia Vit&oacute;ria Nascimento</td><td><span class="badge badge-green">Refor&ccedil;o Escolar</span></td><td class="td-mu">Sabrina &mdash; Manh&atilde;</td><td class="td-mu">24/03/2026</td><td><span class="presence yes"><span class="dot dot-green"></span>Sim</span></td><td class="td-mu td-el">Bom desempenho</td><td class="td-mu">Sabrina</td></tr>
+              <tr><td class="td-nm">Maria das Gra&ccedil;as Damasceno</td><td><span class="badge badge-amber">Fonte Ativa</span></td><td class="td-mu">Grupo Idosos</td><td class="td-mu">23/03/2026</td><td><span class="presence yes"><span class="dot dot-green"></span>Sim</span></td><td class="td-mu td-el">Aula de alongamento</td><td class="td-mu">Saulo Pinho</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="t-foot">
+          <span>Mostrando 6 de 316</span>
+          <div style="display:flex;gap:6px"><button class="btn btn-secondary btn-sm">Anterior</button><button class="btn btn-secondary btn-sm">Proximo</button></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <nav class="bnav">
+    <div class="bn" onclick="go('dashboard')"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>Home</div>
+    <div class="bn" onclick="go('pessoas')"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3.866 3.134-6.5 7-6.5s7 2.634 7 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Pessoas</div>
+    <div class="bn-fab" onclick="go('chamada')"><div class="bn-fab-circle"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><span class="bn-fab-label">Chamada</span></div>
+    <div class="bn active"><svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h10M3 15h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Registros</div>
+    <div class="bn" onclick="go('relatorios')"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15V6l5 2.5L10 5l2 3.5L17 6v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Relat.</div>
+  </nav>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     RELATORIOS
+════════════════════════════════════════ -->
+<div id="s-relatorios" class="screen">
+<div class="app">
+  <nav class="sb">
+    <div class="sb-brand"><div class="nm">Conexus</div><div class="sm">ONG Fonte da Vida</div></div>
+    <span class="sb-sec">Principal</span>
+    <div class="sb-item" onclick="go('dashboard')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Dashboard</span></div>
+    <div class="sb-item" onclick="go('chamada')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="13" cy="12" r="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M13 11v1l.5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span><span class="sb-txt">Chamada</span></div>
+    <div class="sb-item" onclick="go('pessoas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Pessoas</span></div>
+    <div class="sb-item" onclick="go('turmas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Turmas</span></div>
+    <div class="sb-item" onclick="go('atendimentos')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Atendimentos</span></div>
+    <span class="sb-sec">Gestao</span>
+    <div class="sb-item active"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4l4 2 2-3 2 3 4-2v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="sb-txt">Relatorios</span></div>
+    <div class="sb-item" onclick="go('usuarios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.761 2.239-4.5 5-4.5s5 1.739 5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 8v3M10.5 9.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Usuarios</span></div>
+    <div class="sb-bot"><div class="sb-usr"><div class="av av-md av-forest">EM</div><div class="sb-usr-info"><div class="un">Erik Maia</div><div class="ur">Admin</div></div></div></div>
+  </nav>
+  <main class="main">
+    <div class="ph">
+      <div><h1>Relatorios</h1><p class="sub">GET /relatorios/resumo e /relatorios/frequencia</p></div>
+      <div class="ph-acts">
+        <button class="btn btn-secondary btn-sm">Exportar CSV</button>
+        <button class="btn btn-secondary btn-sm">Exportar PDF</button>
+      </div>
+    </div>
+    <!-- Filtros -->
+    <div class="rel-filters">
+      <div class="field" style="flex:0 0 auto"><label>Mes / Ano</label><input type="month" value="2026-03" style="width:auto"></div>
+      <div class="field" style="flex:0 0 auto"><label>Atividade</label><select style="width:auto"><option>Todas</option><option>Reforco Escolar</option><option>Programa 60+</option><option>Futebol</option><option>Quentinhas</option></select></div>
+      <div class="field" style="flex:0 0 auto"><label>Turma</label><select style="width:auto"><option>Todas as turmas</option><option>Sabrina &mdash; Manh&atilde;</option><option>Sabrina &mdash; Tarde</option><option>Alana &mdash; Manh&atilde;</option><option>Alana &mdash; Tarde</option><option>Karole &mdash; Infantil V</option><option>Fonte Ativa &mdash; Idosos</option></select></div>
+      <button class="btn btn-primary btn-sm" style="align-self:flex-end">Gerar relatorio</button>
+    </div>
+    <div class="pb">
+      <!-- KPIs do relatorio (queries da secao 10 do doc) -->
+      <div class="rel-grid">
+        <div class="rel-card">
+          <div class="rel-card-lbl">Total de pessoas ativas</div>
+          <div class="rel-card-val">90</div>
+          <div class="rel-card-sub">60 crian&ccedil;as + 30 idosos assistidos</div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-card-lbl">Atendimentos 2026</div>
+          <div class="rel-card-val">316</div>
+          <div class="rel-card-sub">date_trunc('month', data_atendimento) = now()</div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-card-lbl">Turmas ativas</div>
+          <div class="rel-card-val">6</div>
+          <div class="rel-card-sub">Infantil V, 1&ordm;/2&ordm;, 3&ordm;-6&ordm;, Idosos (manh&atilde;+tarde)</div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-card-lbl">Crian&ccedil;as matriculadas</div>
+          <div class="rel-card-val">60</div>
+          <div class="rel-card-sub">25 manh&atilde; + 35 tarde (incl. Infantil V)</div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-card-lbl">Idosos assistidos</div>
+          <div class="rel-card-val">30</div>
+          <div class="rel-card-sub">Fonte Ativa &mdash; Assessoria Esportiva</div>
+        </div>
+        <div class="rel-card">
+          <div class="rel-card-lbl">Educadores</div>
+          <div class="rel-card-val">4</div>
+          <div class="rel-card-sub">Karole, Sabrina, Alana, Saulo Pinho</div>
+        </div>
+      </div>
+      <!-- Frequencia por turma -->
+      <div class="card card-p">
+        <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:1.2rem">Frequencia media por turma</div>
+        <div class="rel-bar-block">
+          <div class="rel-bar-row"><span class="rel-bar-lbl">Fonte Ativa &mdash; Idosos</span><div class="rel-bar-track"><div class="rel-bar-fill" style="width:94%;background:var(--leaf)"></div></div><span class="rel-bar-pct">94%</span></div>
+          <div class="rel-bar-row"><span class="rel-bar-lbl">Turma A &mdash; Reforco</span><div class="rel-bar-track"><div class="rel-bar-fill" style="width:91%;background:var(--leaf)"></div></div><span class="rel-bar-pct">91%</span></div>
+          <div class="rel-bar-row"><span class="rel-bar-lbl">Quentinhas</span><div class="rel-bar-track"><div class="rel-bar-fill" style="width:88%;background:var(--sage)"></div></div><span class="rel-bar-pct">88%</span></div>
+          <div class="rel-bar-row"><span class="rel-bar-lbl">Turma B &mdash; Reforco</span><div class="rel-bar-track"><div class="rel-bar-fill" style="width:86%;background:var(--sage)"></div></div><span class="rel-bar-pct">86%</span></div>
+          <div class="rel-bar-row"><span class="rel-bar-lbl">Sub-12 &mdash; Futebol</span><div class="rel-bar-track"><div class="rel-bar-fill" style="width:80%;background:var(--amber)"></div></div><span class="rel-bar-pct">80%</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <nav class="bnav">
+    <div class="bn" onclick="go('dashboard')"><svg viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="2" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="2" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="11" y="11" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>Home</div>
+    <div class="bn" onclick="go('pessoas')"><svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="7" r="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M3 18c0-3.866 3.134-6.5 7-6.5s7 2.634 7 6.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Pessoas</div>
+    <div class="bn-fab" onclick="go('chamada')"><div class="bn-fab-circle"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10h12" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></div><span class="bn-fab-label">Chamada</span></div>
+    <div class="bn" onclick="go('atendimentos')"><svg viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h10M3 15h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Registros</div>
+    <div class="bn active"><svg viewBox="0 0 20 20" fill="none"><path d="M3 15V6l5 2.5L10 5l2 3.5L17 6v9" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>Relat.</div>
+  </nav>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     USUARIOS
+════════════════════════════════════════ -->
+<div id="s-usuarios" class="screen">
+<div class="app">
+  <nav class="sb">
+    <div class="sb-brand"><div class="nm">Conexus</div><div class="sm">ONG Fonte da Vida</div></div>
+    <span class="sb-sec">Principal</span>
+    <div class="sb-item" onclick="go('dashboard')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/><rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.4"/></svg></span><span class="sb-txt">Dashboard</span></div>
+    <div class="sb-item" onclick="go('chamada')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><circle cx="13" cy="12" r="2.5" stroke="currentColor" stroke-width="1.3"/><path d="M13 11v1l.5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span><span class="sb-txt">Chamada</span></div>
+    <div class="sb-item" onclick="go('pessoas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="5.5" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M2 14c0-3.314 2.686-5 6-5s6 1.686 6 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Pessoas</span></div>
+    <div class="sb-item" onclick="go('turmas')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Turmas</span></div>
+    <div class="sb-item" onclick="go('atendimentos')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 4h12M2 8h8M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span><span class="sb-txt">Atendimentos</span></div>
+    <span class="sb-sec">Gestao</span>
+    <div class="sb-item" onclick="go('relatorios')"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><path d="M2 12V4l4 2 2-3 2 3 4-2v8" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span><span class="sb-txt">Relatorios</span></div>
+    <div class="sb-item active"><span class="sb-ico"><svg viewBox="0 0 16 16" fill="none"><circle cx="6" cy="5.5" r="2.5" stroke="currentColor" stroke-width="1.4"/><path d="M1 14c0-2.761 2.239-4.5 5-4.5s5 1.739 5 4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M12 8v3M10.5 9.5h3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></span><span class="sb-txt">Usuarios</span></div>
+    <div class="sb-bot"><div class="sb-usr"><div class="av av-md av-forest">EM</div><div class="sb-usr-info"><div class="un">Erik Maia</div><div class="ur">Admin</div></div></div></div>
+  </nav>
+  <main class="main">
+    <div class="ph">
+      <div><h1>Usuarios do sistema</h1><p class="sub">POST /usuarios &mdash; Apenas ADMIN pode criar e editar</p></div>
+      <button class="btn btn-primary btn-sm" onclick="document.getElementById('m-usuario').classList.add('open')">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1v11M1 6.5h11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Convidar usuario
+      </button>
+    </div>
+    <div class="pb">
+      <div class="user-grid">
+        <div class="ucard"><div class="uc-top"><div class="av av-lg av-forest">EM</div><div class="uc-meta"><h3>Erik Maia</h3><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2441564d4f64424b4a50414041524d40450a4b5643">[email&#160;protected]</a></p><span class="badge badge-green">Admin</span></div></div><div class="uc-stats"><div class="uc-stat"><div class="v">48</div><div class="k">Registros</div></div><div class="uc-stat"><div class="v">Mar 24</div><div class="k">Desde</div></div></div><div class="uc-foot"><div class="online"><span class="dot dot-green"></span>Ativo agora</div><button class="btn btn-secondary btn-sm">Gerenciar</button></div></div>
+        <div class="ucard"><div class="uc-top"><div class="av av-lg av-earth">MS</div><div class="uc-meta"><h3>Sabrina (Educadora)</h3><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="92fff3e0fbf3d2f4fdfce6f7f6f7e4fbf6f3bcfde0f5">[email&#160;protected]</a></p><span class="badge badge-amber">Educador</span></div></div><div class="uc-stats"><div class="uc-stat"><div class="v">127</div><div class="k">Registros</div></div><div class="uc-stat"><div class="v">Jan 24</div><div class="k">Desde</div></div></div><div class="uc-foot"><div class="online"><span class="dot dot-green"></span>Ativa agora</div><button class="btn btn-secondary btn-sm">Gerenciar</button></div></div>
+        <div class="ucard"><div class="uc-top"><div class="av av-lg av-amber">JS</div><div class="uc-meta"><h3>Saulo Pinho</h3><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e68c898789a680898892838283908f8287c8899481">[email&#160;protected]</a></p><span class="badge badge-amber">Educador</span></div></div><div class="uc-stats"><div class="uc-stat"><div class="v">89</div><div class="k">Registros</div></div><div class="uc-stat"><div class="v">Fev 24</div><div class="k">Desde</div></div></div><div class="uc-foot"><div class="online"><span class="dot dot-gray"></span>Visto hoje</div><button class="btn btn-secondary btn-sm">Gerenciar</button></div></div>
+        <div class="ucard"><div class="uc-top"><div class="av av-lg av-leaf">CM</div><div class="uc-meta"><h3>Alana (Educadora)</h3><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9dfefceff1f2eeddfbf2f3e9f8f9f8ebf4f9fcb3f2effa">[email&#160;protected]</a></p><span class="badge badge-amber">Educador</span></div></div><div class="uc-stats"><div class="uc-stat"><div class="v">63</div><div class="k">Registros</div></div><div class="uc-stat"><div class="v">Mai 24</div><div class="k">Desde</div></div></div><div class="uc-foot"><div class="online"><span class="dot dot-gray"></span>Ontem</div><button class="btn btn-secondary btn-sm">Gerenciar</button></div></div>
+        <div class="ucard"><div class="uc-top"><div class="av av-lg av-earth">AC</div><div class="uc-meta"><h3>Karole (Educadora)</h3><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e0818e81a0868f8e9485848596898481ce8f9287">[email&#160;protected]</a></p><span class="badge badge-gray">Visualizador</span></div></div><div class="uc-stats"><div class="uc-stat"><div class="v">22</div><div class="k">Registros</div></div><div class="uc-stat"><div class="v">Jul 24</div><div class="k">Desde</div></div></div><div class="uc-foot"><div class="online"><span class="dot dot-gray"></span>3 dias atras</div><button class="btn btn-secondary btn-sm">Gerenciar</button></div></div>
+      </div>
+    </div>
+  </main>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     DESIGN TOKENS
+════════════════════════════════════════ -->
+<div id="s-tokens" class="screen">
+<div class="tok-body">
+  <h1 class="tok-h1">Design System</h1>
+  <p class="tok-intro">Tokens, tipografia, componentes e padroes da Conexus &mdash; referencia para implementacao Vue + NestJS.</p>
+  <div class="tok-sec"><h2>Paleta de cores</h2><div class="cr"><div class="cs-w"><div class="csw" style="background:#1a3a2a"></div><div class="csn">Forest</div><div class="csh">#1a3a2a</div></div><div class="cs-w"><div class="csw" style="background:#3d7a56"></div><div class="csn">Forest Light</div><div class="csh">#3d7a56</div></div><div class="cs-w"><div class="csw" style="background:#5a9e6f"></div><div class="csn">Leaf</div><div class="csh">#5a9e6f</div></div><div class="cs-w"><div class="csw" style="background:#8bbb9a"></div><div class="csn">Sage</div><div class="csh">#8bbb9a</div></div><div class="cs-w"><div class="csw" style="background:#e8f2eb"></div><div class="csn">Forest Pale</div><div class="csh">#e8f2eb</div></div><div class="cs-w"><div class="csw" style="background:#d4894a"></div><div class="csn">Amber</div><div class="csh">#d4894a</div></div><div class="cs-w"><div class="csw" style="background:#6b4c35"></div><div class="csn">Earth</div><div class="csh">#6b4c35</div></div><div class="cs-w"><div class="csw" style="background:#f5ede6"></div><div class="csn">Earth Pale</div><div class="csh">#f5ede6</div></div><div class="cs-w"><div class="csw" style="background:#f7f2eb"></div><div class="csn">Sand</div><div class="csh">#f7f2eb</div></div><div class="cs-w"><div class="csw" style="background:#faf8f4"></div><div class="csn">Cream</div><div class="csh">#faf8f4</div></div><div class="cs-w"><div class="csw" style="background:#1c2c24"></div><div class="csn">Ink</div><div class="csh">#1c2c24</div></div><div class="cs-w"><div class="csw" style="background:#6b8477"></div><div class="csn">Ink Muted</div><div class="csh">#6b8477</div></div><div class="cs-w"><div class="csw" style="background:#9bb5a8"></div><div class="csn">Ink Faint</div><div class="csh">#9bb5a8</div></div></div></div>
+  <div class="tok-sec"><h2>Tipografia</h2><div class="type-sc"><div class="tr-row"><span class="tr-spec">Lora / 500 / 50px</span><span style="font-family:var(--font-display);font-size:50px;font-weight:500;color:var(--ink);line-height:1">Fonte da Vida</span></div><div class="tr-row"><span class="tr-spec">Lora / italic / 36px</span><span style="font-family:var(--font-display);font-size:36px;font-style:italic;color:var(--ink);line-height:1">Cuidado e proposito</span></div><div class="tr-row"><span class="tr-spec">Lora / 500 / 24px</span><span style="font-family:var(--font-display);font-size:24px;font-weight:500;color:var(--ink)">Titulo de pagina</span></div><div class="tr-row"><span class="tr-spec">DM Sans / 600 / 15px</span><span style="font-size:15px;font-weight:600;color:var(--ink)">Titulo de secao e card</span></div><div class="tr-row"><span class="tr-spec">DM Sans / 400 / 14px</span><span style="font-size:14px;color:var(--ink-mid)">Corpo de texto padrao para leitura fluida</span></div><div class="tr-row"><span class="tr-spec">DM Sans / 700 / 11px UPPER</span><span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--ink-muted)">Labels de campo e cabecalhos de tabela</span></div><div class="tr-row"><span class="tr-spec">DM Sans / 400 / 12px</span><span style="font-size:12px;color:var(--ink-faint)">Metadados, timestamps, notas auxiliares</span></div></div></div>
+  <div class="tok-sec"><h2>Componentes</h2><div class="cmp-grid">
+    <div class="card card-p cmp-card"><h3>Botoes</h3><div style="display:flex;flex-direction:column;gap:9px"><button class="btn btn-primary">Acao principal</button><button class="btn btn-secondary">Acao secundaria</button><button class="btn btn-ghost">Fantasma</button><button class="btn btn-danger">Destrutiva</button><button class="btn btn-amber">Destaque amber</button></div></div>
+    <div class="card card-p cmp-card"><h3>Badges e roles</h3><div style="display:flex;flex-wrap:wrap;gap:8px"><span class="badge badge-green">Admin</span><span class="badge badge-amber">Educador</span><span class="badge badge-gray">Visualizador</span><span class="badge badge-green">Beneficiario</span><span class="badge badge-sage">Educador (pessoa)</span><span class="badge badge-earth">Voluntario</span><span class="badge badge-red">Ausente</span></div></div>
+    <div class="card card-p cmp-card"><h3>Inputs e selects</h3><div style="display:flex;flex-direction:column;gap:11px"><div class="field"><label>Campo padrao</label><input type="text" placeholder="Digite..."></div><div class="field"><label>Select</label><select><option>Beneficiario</option><option>Voluntario</option><option>Educador</option></select></div></div></div>
+    <div class="card card-p cmp-card"><h3>Chips de atividade</h3><div class="chips-row"><span class="chip selected">Reforco Escolar</span><span class="chip">Programa 60+</span><span class="chip">Futebol</span><span class="chip">Quentinhas</span></div></div>
+    <div class="card card-p cmp-card"><h3>Toggles e presenca</h3><div style="display:flex;flex-direction:column;gap:14px"><div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:14px;color:var(--ink-mid)">Presente</span><div class="toggle on" onclick="this.classList.toggle('on')"></div></div><div style="display:flex;align-items:center;justify-content:space-between"><span style="font-size:14px;color:var(--ink-mid)">Notificacoes</span><div class="toggle" onclick="this.classList.toggle('on')"></div></div><div style="display:flex;gap:14px;margin-top:4px"><span class="presence yes"><span class="dot dot-green"></span>Presente</span><span class="presence no"><span class="dot dot-red"></span>Ausente</span></div></div></div>
+    <div class="card card-p cmp-card"><h3>Avatares</h3><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><div class="av av-sm av-forest">EM</div><div class="av av-md av-earth">MS</div><div class="av av-lg av-amber">JS</div><div class="av av-lg av-leaf">CM</div><div class="av av-lg av-sage">AC</div></div><div style="display:flex;flex-direction:column;gap:7px"><div style="height:27px;background:var(--forest-pale);border-radius:var(--r-xs);display:flex;align-items:center;padding:0 10px;font-size:11px;color:var(--ink-mid);font-family:monospace">r-xs 4px</div><div style="height:27px;background:var(--forest-pale);border-radius:var(--r-sm);display:flex;align-items:center;padding:0 10px;font-size:11px;color:var(--ink-mid);font-family:monospace">r-sm 10px</div><div style="height:27px;background:var(--forest-pale);border-radius:var(--r-md);display:flex;align-items:center;padding:0 10px;font-size:11px;color:var(--ink-mid);font-family:monospace">r-md 14px</div><div style="height:27px;background:var(--forest-pale);border-radius:var(--r-lg);display:flex;align-items:center;padding:0 10px;font-size:11px;color:var(--ink-mid);font-family:monospace">r-lg 20px</div></div></div>
+  </div></div>
+  <div class="tok-sec"><h2>Breakpoints</h2><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem"><div class="card card-p"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);margin-bottom:9px">Desktop &gt; 1024px</div><div style="font-size:13px;color:var(--ink-mid);line-height:1.7">Sidebar expandida (240px) com labels e secoes. KPIs 4 colunas. Layouts two-col.</div></div><div class="card card-p"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);margin-bottom:9px">Tablet 768&mdash;1024px</div><div style="font-size:13px;color:var(--ink-mid);line-height:1.7">Sidebar em icones (64px). KPIs 2 colunas. Cards empilhados. Grids 2 colunas.</div></div><div class="card card-p"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-muted);margin-bottom:9px">Mobile &lt; 768px</div><div style="font-size:13px;color:var(--ink-mid);line-height:1.7">Sidebar oculta. Bottom nav + FAB central. Padding compacto. Tabelas com scroll horizontal.</div></div></div></div>
+</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     MODAIS GLOBAIS
+════════════════════════════════════════ -->
+<!-- Modal Nova Turma -->
+<div id="m-turma" class="overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <div class="mhd"><h2>Nova Turma</h2><button class="mcl" onclick="document.getElementById('m-turma').classList.remove('open')">&#215;</button></div>
+    <div class="mbd">
+      <div class="field"><label>Nome da turma <span style="color:var(--red)">*</span></label><input type="text" placeholder="Ex: Turma 1 e 2 ano &mdash; Manha"></div>
+      <div class="field"><label>Atividade <span style="color:var(--red)">*</span></label><select><option value="">Selecione...</option><option>reforco_escolar</option><option>programa_60mais</option><option>futebol</option><option>quentinhas</option></select></div>
+      <div class="form-row">
+        <div class="field"><label>Turno</label><select><option>manha</option><option>tarde</option><option>noite</option></select></div>
+        <div class="field"><label>Educador responsavel</label><select><option>Maria Silva</option><option>Joao Santos</option><option>Carlos Mendes</option><option>Ana Costa</option></select></div>
+      </div>
+    </div>
+    <div class="mft"><button class="btn btn-secondary" onclick="document.getElementById('m-turma').classList.remove('open')">Cancelar</button><button class="btn btn-primary" onclick="document.getElementById('m-turma').classList.remove('open')">Criar turma</button></div>
+  </div>
+</div>
+<!-- Modal Convidar Usuario -->
+<div id="m-usuario" class="overlay" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <div class="mhd"><h2>Convidar usuario</h2><button class="mcl" onclick="document.getElementById('m-usuario').classList.remove('open')">&#215;</button></div>
+    <div class="mbd">
+      <div class="field"><label>Nome completo <span style="color:var(--red)">*</span></label><input type="text" placeholder="Nome do educador ou colaborador"></div>
+      <div class="field"><label>E-mail <span style="color:var(--red)">*</span></label><input type="email" placeholder="email@fontedevida.org"></div>
+      <div class="field"><label>Perfil de acesso <span style="color:var(--red)">*</span></label><select><option value="">Selecione o role...</option><option value="admin">Admin &mdash; acesso total</option><option value="educador">Educador &mdash; registro e chamada</option><option value="visualizador">Visualizador &mdash; somente leitura</option></select></div>
+      <div class="form-note"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:1px"><circle cx="8" cy="8" r="6.5" stroke="var(--amber-deep)" stroke-width="1.3"/><path d="M8 5v4M8 11v.5" stroke="var(--amber-deep)" stroke-width="1.4" stroke-linecap="round"/></svg><span>O usuario recebera um e-mail para criar sua senha via Supabase Auth. Apos o login, vera apenas as turmas e dados permitidos pelo seu perfil.</span></div>
+    </div>
+    <div class="mft"><button class="btn btn-secondary" onclick="document.getElementById('m-usuario').classList.remove('open')">Cancelar</button><button class="btn btn-primary" onclick="document.getElementById('m-usuario').classList.remove('open')">Enviar convite</button></div>
+  </div>
+</div>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/chamada.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
